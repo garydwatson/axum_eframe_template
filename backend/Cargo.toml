@@ -1,0 +1,18 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = { version = "0.6.18", features = ["tracing", "headers", "http2", "macros", "multipart", "ws"] }
+axum-extra = { version = "0.7.4", features = ["async-read-body", "cookie", "cookie-key-expansion", "cookie-private", "cookie-signed", "erased-json", "form", "json-lines", "multipart", "protobuf", "query", "typed-routing"] }
+serde = "1.0.163"
+tokio = { version = "1.0", features = ["full"] }
+tower = { version = "0.4", features = ["util"] }
+tower-http = { version = "0.4.0", features = ["fs", "trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+shared_types = { path = "../shared_types" }

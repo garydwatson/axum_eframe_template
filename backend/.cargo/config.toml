@@ -1,0 +1,3 @@
+#make sure you set this to something explicit, otherwise incremental builds will break
+[build]
+target = "x86_64-unknown-linux-gnu"
