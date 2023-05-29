@@ -1,9 +1,5 @@
-use std::borrow::{BorrowMut, Borrow};
 use std::cell::RefCell;
 use std::rc::Rc;
-
-use egui::style::Interaction;
-use shared_types::CreateUser;
 
 /// We derive Deserialize/Serialize so we can persist app state on shutdown.
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -157,27 +153,6 @@ impl eframe::App for TemplateApp {
                             ui.label(".");
                         });
                     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 },
                 CurrentTab::DeleteUser => {
 
@@ -201,17 +176,9 @@ impl eframe::App for TemplateApp {
             ui.heading("eframe template");
             ui.text_edit_singleline(shabel);
 
-////            ui.text_edit_multiline(&mut (**stuff).borrow().clone());
-
             egui::ScrollArea::vertical().stick_to_bottom(true).show(ui, |ui| {
-////                ui.style_mut().wrap = Some(false);
                 ui.add(egui::TextEdit::multiline(&mut (**stuff).borrow().clone().as_str()).desired_width(f32::INFINITY));
-////                ui.text_edit_multiline(&mut (**stuff).borrow().clone().as_str());
-////                for line in (**stuff).borrow().clone().lines() {
-////                    ui.label(line);
-////                }
             });
-
 
             ui.hyperlink("https://github.com/emilk/eframe_template");
             ui.add(egui::github_link_file!(
