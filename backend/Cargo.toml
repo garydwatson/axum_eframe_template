@@ -6,10 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-axum = { version = "0.6.18", features = ["tracing", "headers", "http2", "macros", "multipart", "ws"] }
-axum-extra = { version = "0.7.4", features = ["async-read-body", "cookie", "cookie-key-expansion", "cookie-private", "cookie-signed", "erased-json", "form", "json-lines", "multipart", "protobuf", "query", "typed-routing"] }
+axum = { version = "0.6.18", features = ["tracing"] }
 serde = "1.0.163"
-tokio = { version = "1.0", features = ["full"] }
+tokio = { version = "1.0", features = ["tracing", "macros", "rt-multi-thread"] }
 tower = { version = "0.4", features = ["util"] }
 tower-http = { version = "0.4.0", features = ["fs", "trace"] }
 tracing = "0.1"
