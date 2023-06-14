@@ -1,3 +1,5 @@
+#![allow(unused_imports)]
+
 use axum::{
     extract,
     routing::get,
